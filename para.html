@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банковская карта</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+        }
+        .form-container, .card-preview {
+            width: 50%;
+        }
+        .card-preview {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+        .card-preview img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="cardForm">
+                <label for="bankName">Название банка:</label>
+                <input type="text" id="bankName" name="bankName" required><br><br>
+
+                <label for="cardType">Тип платежной системы:</label>
+                <select id="cardType" name="cardType" required>
+                    <option value="VISA">VISA</option>
+                    <option value="MasterCard">MasterCard</option>
+                    <option value="Mir">Мир</option>
+                </select><br><br>
+
+                <label for="cardNumber">Номер карты:</label>
+                <input type="text" id="cardNumber" name="cardNumber" maxlength="16" required><br><br>
+
+                <label for="cardHolder">Имя держателя карты:</label>
+                <input type="text" id="cardHolder" name="cardHolder" required><br><br>
+
+                <label for="expiryDate">Месяц и год окончания:</label>
+                <input type="month" id="expiryDate" name="expiryDate" required><br><br>
+
+                <button type="submit">Добавить карту</button>
+            </form>
+        </div>
+        <div class="card-preview">
+            <h3>Миниатюра карты</h3>
+            <div id="cardPreview">
+                <img id="bankLogo" src="" alt="Логотип банка" style="display:none;">
+                <img id="cardLogo" src="" alt="Логотип платежной системы" style="display:none;">
+                <p id="previewCardNumber">#### #### #### ####</p>
+                <p id="previewCardHolder">Имя держателя</p>
+                <p id="previewExpiryDate">ММ/ГГ</p>
+            </div>
+        </div>
+    </div>
+
+    <table id="cardTable">
+        <thead>
+            <tr>
+                <th>Название банка</th>
+                <th>Тип карты</th>
+                <th>Номер карты</th>
+                <th>Держатель карты</th>
+                <th>Срок действия</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script src="./para.js"></script>
+</body>
+</html>
