@@ -35,6 +35,10 @@
             padding: 10px;
             text-align: left;
         }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
@@ -52,7 +56,8 @@
                 </select><br><br>
 
                 <label for="cardNumber">Номер карты:</label>
-                <input type="text" id="cardNumber" name="cardNumber" maxlength="16" required><br><br>
+                <input type="text" id="cardNumber" name="cardNumber" maxlength="16" required>
+                <span id="cardNumberError" class="error"></span><br><br>
 
                 <label for="cardHolder">Имя держателя карты:</label>
                 <input type="text" id="cardHolder" name="cardHolder" required><br><br>
@@ -89,6 +94,7 @@
         </tbody>
     </table>
 
-    <script src="./para.js"></script>
+    <script src = "para.js>
+    </script>
 </body>
 </html>
